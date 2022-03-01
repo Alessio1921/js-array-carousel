@@ -28,7 +28,12 @@ for (let i = 0; i < items.length; i++) {
   carouselContent+=`
   <div class="my-cards d-none">
     <img src=" ${items[i]}" alt="${title[i]} img">
-  </div>`
+    <div class="description position-absolute text-white fw-bold pe-2">
+      <h3>${title[i]}</h3>
+      <p>${text[i]}</p>
+    </div>
+  </div>
+  `
 }
 // I take the wrapper of the img
 let wrapper=document.querySelector(".col-8");
