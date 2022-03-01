@@ -12,17 +12,23 @@
   <body>
     <main class="position-relative">
       <div class="container my-container position-absolute">
-        <div class="row">
+        <div class="row overflow-hidden">
           <div class="col-10 p-0 bg-primary">
-            <img src="img/01.jpg" alt="">
+            <!-- <img src="img/01.jpg" alt=""> -->
+            
           </div>
-          <div class="col-2 p-0">
+          <div class="col-2 p-0 position-relative">
             <img src="img/01.jpg"  alt="">   
             <img src="img/02.jpg"  alt="">         
             <img src="img/03.jpg"  alt="">         
             <img src="img/04.jpg"  alt="">         
             <img src="img/05.jpg"  alt="">         
-
+            <div class="form-arrow up position-absolute bg-secondary d-flex justify-content-center align-items-center">
+              <i class="fas fa-angle-up"></i>
+            </div>
+            <div class="form-arrow down position-absolute bg-secondary d-flex justify-content-center align-items-center">
+              <i class="fas fa-angle-down"></i>
+            </div>
           </div>
         </div>
       </div>

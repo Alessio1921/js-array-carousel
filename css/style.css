@@ -14,3 +14,18 @@ main{
   height: calc(100% / 5);
   width: 100%;
 }
+.up{
+  top:1rem;
+  
+}
+.down{
+  bottom: 1rem;
+}
+.form-arrow{
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+  left:50%;
+  transform: translateX(-50%);
+}
