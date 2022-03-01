@@ -1,0 +1,16 @@
+main{
+  height: 100vh;
+}
+.my-container{
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.my-container .col-10 img{
+  object-fit: cover;
+  width: 100%;
+}
+.my-container .col-2 img{
+  height: calc(100% / 5);
+  width: 100%;
+}
