@@ -66,20 +66,37 @@ const btnUp=document.querySelector(".up");
 const btnDown=document.querySelector(".down");
 
 let indexImg=0;
-btnDown.addEventListener('click', function () {
-  carouselItems[indexImg].classList.add("d-none");
-  bookmarkItem[indexImg].classList.add('opacity');
-  indexImg++;
-  carouselItems[indexImg].classList.remove("d-none");
-  bookmarkItem[indexImg].classList.remove('opacity');
-
-
-})
+// function of the button up 
 btnUp.addEventListener('click', function () {
-  bookmarkItem[indexImg].classList.add('opacity');
-  carouselItems[indexImg].classList.add("d-none");
-  indexImg--;
-  bookmarkItem[indexImg].classList.remove('opacity');
-  carouselItems[indexImg].classList.remove("d-none");
-
+  if(indexImg == 0){
+    indexImg=4;
+    bookmarkItem[0].classList.add('opacity');
+    carouselItems[0].classList.add("d-none");
+    bookmarkItem[indexImg].classList.remove('opacity');
+    carouselItems[indexImg].classList.remove("d-none");
+  }
+  else{
+    bookmarkItem[indexImg].classList.add('opacity');
+    carouselItems[indexImg].classList.add("d-none");
+    indexImg--;
+    bookmarkItem[indexImg].classList.remove('opacity');
+    carouselItems[indexImg].classList.remove("d-none");
+  }
+})
+// function of the button down
+btnDown.addEventListener('click', function () {
+  if (indexImg==4) {
+    indexImg=0;
+    bookmarkItem[4].classList.add('opacity');
+    carouselItems[4].classList.add("d-none");
+    carouselItems[indexImg].classList.remove("d-none");
+    bookmarkItem[indexImg].classList.remove('opacity');
+  }
+  else{
+    carouselItems[indexImg].classList.add("d-none");
+    bookmarkItem[indexImg].classList.add('opacity');
+    indexImg++;
+    carouselItems[indexImg].classList.remove("d-none");
+    bookmarkItem[indexImg].classList.remove('opacity');
+  }
 })
