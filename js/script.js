@@ -23,6 +23,7 @@ const text = [
 ]
 
 let carouselContent="";
+let bookmark="";
 // loop to insert images into array
 for (let i = 0; i < items.length; i++) {
   carouselContent+=`
@@ -34,6 +35,13 @@ for (let i = 0; i < items.length; i++) {
     </div>
   </div>
   `
+// loop to insert images into array
+
+  bookmark+=`
+    <div class="container-card opacity">
+      <img src="${items[i]}"  alt="${title[i]} img"> 
+    </div>  
+  `
 }
 // I take the wrapper of the img
 let wrapper=document.querySelector(".col-8");
@@ -44,16 +52,6 @@ const carouselItems=document.getElementsByClassName("my-cards");
 // I remove the class d-none from the first image
 carouselItems[0].classList.remove("d-none");
 console.log(carouselItems);
-// I create the bookmark variable
-let bookmark="";
-// loop to insert images into array
-for(let i=0; i < items.length; i++){
-  bookmark+=`
-    <div class="container-card opacity">
-      <img src="${items[i]}"  alt="${title[i]} img"> 
-    </div>  
-  `
-}
 // I take the wrapper of the img bookmark
 let wrapperBookmark=document.querySelector(".container-bookmark");
 wrapperBookmark.innerHTML+=bookmark;
@@ -69,7 +67,7 @@ let indexImg=0;
 // function of the button up 
 btnUp.addEventListener('click', function () {
   if(indexImg == 0){
-    indexImg=4;
+    indexImg=items.length-1;
     bookmarkItem[0].classList.add('opacity');
     carouselItems[0].classList.add("d-none");
     bookmarkItem[indexImg].classList.remove('opacity');
@@ -85,7 +83,7 @@ btnUp.addEventListener('click', function () {
 })
 // function of the button down
 btnDown.addEventListener('click', function () {
-  if (indexImg==4) {
+  if (indexImg==items.length-1) {
     indexImg=0;
     bookmarkItem[4].classList.add('opacity');
     carouselItems[4].classList.add("d-none");
